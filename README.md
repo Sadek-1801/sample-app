@@ -5,8 +5,6 @@ This is the sample application for the
 Learn Web Development with Rails*](https://www.railstutorial.org/)
 by [Michael Hartl](https://www.michaelhartl.com/).
 
-See also the [6th edition README](https://github.com/learnenough/sample_app_6th_ed#readme).
-
 ## License
 
 All source code in the [Ruby on Rails Tutorial](https://www.railstutorial.org/)
@@ -18,8 +16,8 @@ is available jointly under the MIT License and the Beerware License. See
 To get started with the app, clone the repo and then install the needed gems. You can clone the repo as follows:
 
 ```
-$ git clone https://github.com/learnenough/rails_tutorial_sample_app_7th_ed
-$ cd rails_tutorial_sample_app_7th_ed/
+$ git clone https://github.com/Sadek-1801/sample-app
+$ cd sample-app/
 ```
 
 To install the gems, you will need the same versions of Ruby and Bundler used to build the sample app, which you can find using the `cat` and `tail` commands as follows:
