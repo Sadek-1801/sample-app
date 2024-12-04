@@ -16,7 +16,7 @@ is available jointly under the MIT License and the Beerware License. See
 To get started with the app, clone the repo and then install the needed gems. You can clone the repo as follows:
 
 ```
-$ git clone https://github.com/Sadek-1801/sample-app
+$ git clone https://github.com/Sadek-1801/sample-app.git
 $ cd sample-app/
 ```
 
