@@ -1,9 +1,9 @@
-function addToggleListerner(sel_id, menu_id, toggle_class){
-  let selectedItem = document.querySelector(`#${sel_id}`);
+function addToggleListerner(selectedId, menuId, toggleClass){
+  let selectedItem = document.querySelector(`#${selectedId}`);
   selectedItem.addEventListener("click", function(e){
     e.preventDefault();
-    let menu = document.querySelector(`#${menu_id}`);
-    menu.classList.toggle(`${toggle_class}`)
+    let menu = document.querySelector(`#${menuId}`);
+    menu.classList.toggle(`${toggleClass}`)
   })
 }
 document.addEventListener("turbo:load", function(){
