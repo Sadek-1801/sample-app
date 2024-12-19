@@ -15,4 +15,10 @@ class ActiveSupport::TestCase
   include ApplicationHelper
 
   # Add more helper methods to be used by all tests here...
+
+  # Returns true if a est user is logged in.
+  def is_logged_in?
+    !session[:user_id].nil?
+  end
+
 end
