@@ -11,6 +11,11 @@
 
 
 one:
-  name: Name Example
-  email: name@example.com
+  name: First Example
+  email: first@example.com
+  password_digest: <%= User.digest('password') %>
+
+two:
+  name: Two Example
+  email: two@example.com
   password_digest: <%= User.digest('password') %>
