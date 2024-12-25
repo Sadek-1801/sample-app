@@ -3,5 +3,8 @@
 
 <%= will_paginate %>
 <ul class="users">
+  <div>
+    Total User : <%= @users.length %>
+  </div>
   <%= render @users %>
 </ul>
