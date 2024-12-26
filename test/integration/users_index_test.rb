@@ -30,9 +30,13 @@ class UsersIndexAdminTest < UserIndexAdmin
   test "should have delete links" do
     first_page_of_users = User.paginate(page: 1)
     first_page_of_users.each do |user|
-      assert_select 'a[href=?]', user_path(user), text: user.name
-      unless user == @admin
-        assert_select 'a[href=?]', user_path(user), text: 'delete'
+      if user.activated?
+        assert_select 'a[href=?]', user_path(user), text: user.name
+        unless user == @admin
+          assert_select 'a[href=?]', user_path(user), text: 'delete'
+          end
+      else
+        assert_select 'a[href=?]', user_path(user), text: user.name, count: 0
       end
     end
   end
@@ -47,10 +51,10 @@ class UsersIndexAdminTest < UserIndexAdmin
 
   test "should display only activated users" do
     # Need to complete this test
-    # User.paginate(page: 1).first.toggle!(Fill_in)
-    # assigns(:users).each do |user|
-    #   assert user.Fill_in
-    # end
+    User.paginate(page: 1).first.toggle!(:activated)
+    assigns(:users).each do |user|
+      assert user.activated?
+    end
   end
 end
 
