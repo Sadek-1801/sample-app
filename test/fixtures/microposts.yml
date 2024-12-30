@@ -20,6 +20,16 @@ most_recent:
   created_at: <%= Time.zone.now %>
   user: one
 
+user_two:
+  content: "I just ate an orange!"
+  created_at: <%= 10.minutes.ago %>
+  user: two
+
+user_three_:
+  content: "Check out the @tauday site by @mhartl:https://tauday.com"
+  created_at: <%= 2.years.ago %>
+  user: three
+
 <% 30.times do |n| %>
 micropost_<%= n %>:
   content: <%= Faker::Lorem.sentence(word_count: 12) %>
