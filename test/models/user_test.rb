@@ -90,7 +90,7 @@ class UserTest < ActiveSupport::TestCase
 
   test "should follow and unfollow a user" do
     first_user = users(:one)
-    second_user = users(:two)
+    second_user = users(:four)
     assert_not first_user.following?(second_user)
     first_user.follow(second_user)
     assert first_user.following?(second_user)
@@ -100,5 +100,23 @@ class UserTest < ActiveSupport::TestCase
     # User can't follow themselves
     first_user.follow(first_user)
     assert_not first_user.following?(first_user)
+  end
+
+  test "feed should  have the right posts" do
+    user1 = users(:one)
+    user2 = users(:two)
+    user3 = users(:three)
+    # Post from  followed user
+    user1.microposts.each do |post_followed|
+      assert user2.feed.include?(post_followed)
+    end
+    # Self-posts for user with followers
+    user1.microposts.each do |post_self|
+      assert user1.feed.include?(post_self)
+    end
+    # Posts from non-followed user
+    user3.microposts.each do |post_unfollowed|
+      assert_not user2.feed.include?(post_unfollowed)
+    end
   end
 end

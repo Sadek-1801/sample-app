@@ -1,3 +1,19 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 # Empty
+
+first:
+  follower: one
+  followed: two
+
+second:
+  follower: one
+  followed: three
+
+third:
+  follower: two
+  followed: one
+
+fourth:
+  follower: four
+  followed: one
